@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  height: 87vh;
+  border: 5px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  color: #fff;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.greeting {
+  font-size: 10rem;
+  color: #fff;
+  font-weight: 700;
+  text-transform: capitalize;
+}
