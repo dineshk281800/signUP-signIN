@@ -12,7 +12,7 @@
       <p class="alert">msg</p>
     </div>
 
-    <div class="form">
+    <form class="form" id="form">
       <h1 class="heading">SignIn</h1>
       <input
         type="email"
@@ -29,9 +29,38 @@
         required
       />
       <button class="btn">sign in</button>
-      <a href="#" class="link">don't have an account? Register one</a>
-    </div>
+      <a href="/sign-up.html" class="link"
+        >don't have an account? Register one</a
+      >
+    </form>
 
     <script src="js/form.js"></script>
+
+    <script>
+      let form = document.getElementById("form");
+
+      if (localStorage.getItem("name") && localStorage.getItem("password")) {
+        document.getElementById("name").value = localStorage.getItem("name");
+        document.getElementById("password").value =
+          localStorage.getItem("password");
+      }
+
+      form.addEvenListener("submit", (e) => {
+        e.preventDefault();
+        let name = document.getElementById("name").value;
+        let password = document.getElementById("password").value;
+
+        //localstorage
+        localStorage.setItem("name", name);
+        localStorage.setItem("password", password);
+
+        alert("Your details are saved in localstorage");
+      });
+
+      document.getElementById("clear").addEventListener("click", () => {
+        localStorage.removeItem("name");
+        localStorage.removeItem("password");
+      });
+    </script>
   </body>
 </html>
